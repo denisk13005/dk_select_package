@@ -10,16 +10,18 @@ dk_select_package is a customisable select input
 
 `npm i dk_select_package`
 
-##
+
 
 ## Usage
 
 This package is made for use in a react application like a registration form for example
 
-#### Example
+## Example
 
 In this example we want to see the name of the state selected but also the abbreviation of this state for db traitements, we will import an array of just 3 states containing a name and an abbreviation :
 
+
+## Array of states
 ```
 export const states = [
   {
@@ -37,6 +39,7 @@ export const states = [
 ]
 ```
 
+## Package usage
 ```
 import React, { useState } from "react"
 import { SelectDk } from "dk_select_package" 
