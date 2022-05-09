@@ -79,3 +79,37 @@ const form = () => {
 
 
 ```
+
+## Inline Style Package
+
+You can change all the package style whith a css file but if you won't create css file you can use the inline style like this 
+
+```
+ <SelectDk
+            datas={states.map((el) => ({
+              value: el.abbreviation,
+              label: el.name,
+            }))}
+            update={updateState}
+            visibleValue={stateString}
+            open={stateOpen}
+            setOpen={setStateOpen}
+            // for change the select input style
+            listBoxStyle={{ color: "white", background: "red" }} 
+            // for change the options container style
+            optionsContainerStyle={{
+              scrollbarColor: " darkBlue pink",
+              backgroundColor: "white",
+            }}
+            // for change the options style (only backgroundColor and color)
+            optionsStyle={{
+              backgroundColor: "white",
+              color: "orange",
+            }}
+            // for change the options style when they hover  (only backgroundColor and color)
+            hoverOptionsStyle={{
+              backgroundColor: "orange",
+              color: "white",
+            }}
+ />
+```
