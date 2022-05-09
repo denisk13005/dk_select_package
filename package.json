@@ -1,38 +1,39 @@
 {
-  "name": "select",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "dk_select_package",
+  "version": "1.0.0",
+  "description": "select modale package",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",   
+    "build-lib": "rollup -c"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisk13005/dk_select_package.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "kirmann denis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisk13005/dk_select_package/issues"
+  },
+  "homepage": "https://github.com/denisk13005/dk_select_package#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "@rollup/plugin-node-resolve": "^13.2.1",   
+    "babel-loader": "^8.2.5",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
