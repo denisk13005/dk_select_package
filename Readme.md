@@ -49,13 +49,14 @@ const form = () => {
 
 
   const [selectIsOpen, setSelectIsOpen] = useState(false) // false if option close true if open
-  const [stateString,setStateString] = useState('Alabama') // visible value in the select area (put a default value) change after choosen option
+  const [stateName,setStateName] = useState('Alabama') // visible value in the select area (put a default value) change after choosen option
+  const [stateAbb,setStateAbb] = useState('AL) // state abbreviation used in data base in this example
   const closeSelect = () => selectIsOpen && setStateOpen(false) // close the option container when click outside 
 
   // update the state stateString value (name in the object array of states) and the stateValue (abbreviation in the objects array of states)
   const updateState = (data) => {
-    setState(data.value)
-    setStateString(data.label)
+    setStateAbb(data.value)
+    setStateName(data.label)
   }
    
 
@@ -67,9 +68,9 @@ const form = () => {
               label: el.name, // !REQUIRE you must have a label parameter in your map object
             }))}
           update={updateState}
-          visibleValue={stateString}
-          open={stateOpen}
-          setOpen={setStateOpen}
+          visibleValue={stateName}
+          open={selectIsOpen}
+          setOpen={setSelectIsOpen}
       />
     
     </form>
