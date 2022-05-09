@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 const PropTypes = require("prop-types")
 import "./selectDk.css"
 
@@ -8,12 +8,9 @@ import "./selectDk.css"
  * @returns customisable select component
  */
 
-export const SelectDk = (props) => {
-  console.log(typeof props.datas)
-  const [open, setopen] = useState(false)
-
+ export const SelectDk = (props) => {
   const toggle = () => {
-    open ? setopen(false) : setopen(true)
+    props.open ? props.setOpen(false) : props.setOpen(true)
   }
 
   return (
@@ -24,10 +21,10 @@ export const SelectDk = (props) => {
       className="selectDk"
       onClick={toggle}
     >
-      <span className="children">{props.child}</span>
+      <span className="children">{props.visibleValue}</span>
 
       <div
-        className={!open ? "optionsContainer" : "open"}
+        className={!props.open ? "optionsContainer" : "open"}
         style={props.optionsContainerStyle}
       >
         {props.datas.map((data, index) => {
@@ -36,6 +33,24 @@ export const SelectDk = (props) => {
               role="option"
               aria-selected
               onClick={(toggle, () => props.update(data))}
+              onMouseEnter={(e) => {
+                if (props.hoverOptionsStyle) {
+                  e.target.style.backgroundColor =
+                    props.hoverOptionsStyle.backgroundColor
+                  e.target.style.color = props.hoverOptionsStyle.color
+                } else {
+                  return
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (props.optionsStyle) {
+                  e.target.style.backgroundColor =
+                    props.optionsStyle.backgroundColor
+                  e.target.style.color = props.optionsStyle.color
+                } else {
+                  return
+                }
+              }}
               style={props.optionsStyle}
               key={index}
               className="options"
@@ -49,7 +64,7 @@ export const SelectDk = (props) => {
 
       <span
         style={props.arrowStyle}
-        className={!open ? "arrowUp" : "arrowDown"}
+        className={!props.open ? "arrowUp" : "arrowDown"}
       >
         ^
       </span>
@@ -60,11 +75,15 @@ export const SelectDk = (props) => {
 SelectDk.propTypes = {
   listBoxStyle: PropTypes.object,
   id: PropTypes.string,
-  child: PropTypes.string,
+  visibleValue: PropTypes.string,
   datas: PropTypes.array,
   optionsContainerStyle: PropTypes.object,
   update: PropTypes.func.isRequired,
   optionsStyle: PropTypes.object,
   arrowStyle: PropTypes.object,
+  hoverOptionsStyle: PropTypes.object,
+  optionStyle: PropTypes.object,
+  setOpen: PropTypes.func,
+  open: PropTypes.bool,
 }
 
