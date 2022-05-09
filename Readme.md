@@ -92,9 +92,9 @@ You can change all the package style whith a css file but if you won't create cs
               label: el.name,
             }))}
             update={updateState}
-            visibleValue={stateString}
-            open={stateOpen}
-            setOpen={setStateOpen}
+            visibleValue={stateName}
+            open={selectIsOpen}
+            setOpen={setSelectIsOpen}
             // for change the select input style
             listBoxStyle={{ color: "white", background: "red" }} 
             // for change the options container style
