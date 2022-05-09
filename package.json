@@ -1,17 +1,20 @@
 {
   "name": "dk_select_package",
   "version": "1.0.0",
-  "description": "select modale package",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "description": "a select customisable package",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",   
-    "build-lib": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/denisk13005/dk_select_package.git"
   },
+  "keywords": [
+    "select"
+  ],
   "author": "kirmann denis",
   "license": "ISC",
   "bugs": {
@@ -19,21 +22,20 @@
   },
   "homepage": "https://github.com/denisk13005/dk_select_package#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/preset-react": "^7.16.7",
-    "@rollup/plugin-node-resolve": "^13.2.1",   
+    "@babel/core": "^7.17.10",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
     "babel-loader": "^8.2.5",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "rollup": "^2.70.2",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  }
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {}
 }

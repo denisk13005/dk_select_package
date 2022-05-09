@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import "./selectDk.scss"
+import "./selectDk.css"
 
 /**
  *
@@ -8,7 +8,7 @@ import "./selectDk.scss"
  * @returns customisable select component
  */
 
-const SelectDk = (props) => {
+export const SelectDk = (props) => {
   console.log(typeof props.datas)
   const [open, setopen] = useState(false)
 
@@ -68,4 +68,3 @@ SelectDk.propTypes = {
   arrowStyle: PropTypes.object,
 }
 
-export default SelectDk
