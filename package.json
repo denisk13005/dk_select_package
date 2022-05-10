@@ -1,6 +1,6 @@
 {
   "name": "dk_select_package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a select customisable package",
   "main": "dist/index.js",
   "module" : "dist/index.es.js",
