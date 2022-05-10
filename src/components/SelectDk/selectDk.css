@@ -57,6 +57,7 @@
 .selectDk .options:hover {
   background-color: #daf2dc;
   color: #4d5198;
+  cursor: pointer;
 }
 
 
