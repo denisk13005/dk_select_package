@@ -18,6 +18,8 @@ This package is made for use in a react application like a registration form for
 
 ## Example
 
+In a SignUp component 
+
 In this example we want to see the name of the state selected but also the abbreviation of this state for db traitements, we will import an array of just 3 states containing a name and an abbreviation :
 
 
@@ -41,13 +43,16 @@ export const states = [
 
 ## Package usage
 ```
+//SignUp.jsx
+
 import React, { useState } from "react"
 import { SelectDk } from "dk_select_package" 
 import {states} from './folder of states array'
 
-const form = () => {
+const SignUp = () => {
 
-
+  const [userName,setUserName] = useState("")
+  const [password, setPassword] = useState("")
   const [selectIsOpen, setSelectIsOpen] = useState(false) // false if option close true if open
   const [stateName,setStateName] = useState('Alabama') // visible value in the select area (put a default value) change after choosen option
   const [stateAbb,setStateAbb] = useState('AL) // state abbreviation used in data base in this example
@@ -58,11 +63,41 @@ const form = () => {
     setStateAbb(data.value)
     setStateName(data.label)
   }
+
+  //signUp function
+
+  const signUp = () => {
+    ...do something to sign up 
+  }
    
 
   return (
-    <form>
+    <form onSubmit = {signUp}>
+      <label  htmlFor="userName">
+        Username
+      </label>
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        value={userName}          
+        onChange={(e) => setUserName(e.target.value.trim())}
+        autoFocus
+      />
+
+      <label  htmlFor="password">
+        Password
+      </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value.trim())}
+      />
+
       <SelectDk
+         
           datas={states.map((el) => ({
               value: el.abbreviation,
               label: el.name, // !REQUIRE you must have a label parameter in your map object
@@ -72,6 +107,8 @@ const form = () => {
           open={selectIsOpen}
           setOpen={setSelectIsOpen}
       />
+
+      <input className="submitBtn" type="submit" value="SignUp" />
     
     </form>
   )
